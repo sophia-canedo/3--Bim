@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_app/domain/entities/generation.dart';
+import '../domain/entities/generation.dart';
 
 class Geracao extends StatelessWidget {
   final Generation generation;

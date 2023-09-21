@@ -2,7 +2,7 @@ class Generation {
   final String title;
   final List<String> pokemons;
 
-  Generation({
+ const Generation({
     required this.title,
     required this.pokemons,
   });

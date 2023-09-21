@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:pokemon_app/data/mockdata/generations.dart';
-import 'package:pokemon_app/domain/entities/generation.dart';
-import 'package:pokemon_app/presentation/geracao.dart';
+import '../data/mockdata/generations.dart';
+import '../domain/entities/generation.dart';
+import '../presentation/geracao.dart';
 
 class TelaGeracoes extends StatelessWidget {
   final List<Generation> generations;
