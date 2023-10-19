@@ -1,8 +1,6 @@
 import 'package:cardapio/Telas/tela_produtos.dart';
-import 'package:cardapio/data/produtos.dart';
-import 'package:cardapio/models/produtos.dart';
+import 'package:cardapio/utils/rotas.dart';
 import 'package:flutter/material.dart';
-import 'utils/rotas.dart';
 
 //depois de programar a tela
 import 'Telas/tela_categoria.dart';
@@ -10,7 +8,6 @@ import 'Telas/tela_categoria.dart';
 void main() => runApp(AppCardapio());
  // style: Theme.of(context).textTheme.titleSmall, vai no categoria
 class AppCardapio extends StatelessWidget {
-  List<Produto> produtosValidos = dummyProdutos;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,10 +23,10 @@ class AppCardapio extends StatelessWidget {
         )
       ),
       //home: TelaCategorias(),
-      routes: {
-        Rotas.HOME : (ctx) => TelaCategorias(),
-        Rotas.PRODUTOS : (ctx) => TelaProdutos(produtosValidos), 
-      }
+      routes: { 
+         Rotas.HOME : (ctx) => TelaCategorias(),
+         Rotas.PRODUTOS : (ctx) => TelaProdutos()
+        }
       
     );
   }
