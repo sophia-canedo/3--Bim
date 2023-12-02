@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../componentes/produto_item.dart';
 import '../models/produtos.dart';
 
@@ -16,17 +17,22 @@ class _TelaProdutosState extends State<TelaProdutos> {
   List<Produto>? displayProdutos;
 
   @override
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    final routeArgs =
-        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
-    tituloCategoria = routeArgs['title']!;
-    final categoryId = routeArgs['id'];
-    displayProdutos = widget.produtosValidos.where((meal) {
-      return meal.categories.contains(categoryId);
-    }).toList();
-    super.didChangeDependencies();
+ void didChangeDependencies() {
+  super.didChangeDependencies();
+  
+  final routeArgs = ModalRoute.of(context)!.settings.arguments;
+  if (routeArgs != null && routeArgs is Map<String, String>) {
+
+  tituloCategoria = routeArgs['title'];
+  final categoryId = routeArgs['id'];
+
+    if (tituloCategoria != null && categoryId != null) {
+      displayProdutos = widget.produtosValidos.where((produto) {
+        return produto.categories.contains(categoryId);
+      }).toList();
+    }
   }
+}
 
   // void _removeMeal(String mealId) {
   //   setState(() {
